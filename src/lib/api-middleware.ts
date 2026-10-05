@@ -96,7 +96,7 @@ export interface ParseAccessResult {
  * 该分支历史上完全没有鉴权，既是「登录才能解析」的漏洞，也是各类门禁的旁路。
  */
 export async function enforceParseAccess(
-  request: Request
+  _request: Request
 ): Promise<ParseAccessResult> {
   // fork 私有部署：移除微信认证门禁（无需关注公众号即可直接解析）
   return { allowed: true, status: 200, message: "", token: null };
