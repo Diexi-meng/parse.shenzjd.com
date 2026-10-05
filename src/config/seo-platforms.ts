@@ -29,7 +29,7 @@ export const PLATFORM_SEO: Record<string, PlatformSeoEntry> = {
     faqs: [
       { q: "抖音短链接 v.douyin.com 怎么解析？", a: "直接把 v.douyin.com 开头的短链接或整段分享文案粘贴到输入框，点击解析即可，无需在浏览器先打开。" },
       { q: "抖音解析出来的是无水印原视频吗？", a: "解析结果为目标视频的无水印版本，可直接预览与下载。" },
-      { q: "抖音视频解析失败怎么办？", a: "部分视频受平台风控或地区限制无法解析，可换个网络环境重试，或关注公众号反馈链接。" },
+      { q: "抖音视频解析失败怎么办？", a: "部分视频受平台风控或地区限制无法解析，可换个网络环境后重试，或稍后再试。" },
     ],
   },
   bilibili: {
@@ -308,7 +308,7 @@ export const PLATFORM_SEO: Record<string, PlatformSeoEntry> = {
     faqs: [
       { q: "TikTok 短链 vm.tiktok.com 怎么解析？", a: "直接把 vm.tiktok.com 或 vt.tiktok.com 短链粘贴到输入框点击解析即可，短链会自动展开并定位到对应视频。" },
       { q: "TikTok 解析出来是无水印的吗？", a: "是，解析结果为原始视频地址，无水印，可直接预览与下载。" },
-      { q: "TikTok 视频解析失败怎么办？", a: "TikTok 对数据中心 IP 风控较严，失败时可稍后重试或更换网络环境，也可以关注公众号反馈具体链接。" },
+      { q: "TikTok 视频解析失败怎么办？", a: "TikTok 对数据中心 IP 风控较严，失败时可稍后重试或更换网络环境，或稍后再试。" },
     ],
   },
 };
