@@ -100,14 +100,6 @@ export default function RootLayout({
           src="https://unpkg.com/@wu529778790/floating-qr@latest/dist/floating-qr.wc.js"
           defer
         />
-        {/* 顶部导航 + 头像浮窗：@wu529778790/site-navbar Web Component 版
-            一条 JS 引入，组件内部自动加载并初始化 wx-auth-sdk（静默校验登录态），
-            无需手动引 SDK、无需写 WxAuth.init()。body 顶部放一个 <site-navbar> 标签即出现整条导航。
-            解析主流程的登录弹窗由 src/lib/wx-auth-client.ts 复用同一全局 window.WxAuth 实例触发 */}
-        <script
-          src="https://unpkg.com/@wu529778790/site-navbar@latest/dist/site-navbar.wc.js"
-          defer
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -127,7 +119,6 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col noise-overlay">
-        <site-navbar />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
