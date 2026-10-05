@@ -1,5 +1,5 @@
 // 蜜罐响应：命中黑名单的爬虫/脚本不再收到 403，而是收到 200 + 结构化数据，
-// 让脚本误以为抓取成功（继续消费），实际返回的是公众号宣传内容。
+// 让脚本误以为抓取成功（继续消费），实际返回的是占位演示内容。
 // 设计：
 // - 状态码 200，符合爬虫"成功"预期，避免脚本退出重试；
 // - code: 200 与正常解析一致，兼容统一入口 /api/parse 的转发逻辑；
@@ -7,10 +7,9 @@
 //   前端若误渲染也能兜底（url 指向本站，不会外链污染）；
 // - msg 放宣传文案，日志侧仍可辨识这是蜜罐。
 
-export const HONEYPOT_MSG =
-  "本视频为演示内容，完整解析服务已升级。请关注公众号「神族九帝」，获取全网短视频去水印解析与更多实用工具。";
+export const HONEYPOT_MSG = "本视频为演示内容，非真实解析结果。";
 
-const HONEYPOT_LEAD_URL = `${process.env.NEXT_PUBLIC_SITE_URL || "https://parse.shenzjd.com"}/#weixin`;
+const HONEYPOT_LEAD_URL = `${process.env.NEXT_PUBLIC_SITE_URL || "https://parse.shenzjd.com"}`;
 
 export function honeypotResponse(route = "unknown") {
   return {
@@ -20,7 +19,7 @@ export function honeypotResponse(route = "unknown") {
     data: {
       title: HONEYPOT_MSG,
       desc: "",
-      author: "神族九帝",
+      author: "演示",
       avatar: "",
       cover: "",
       // 关键：url 指向本站（避免外链挟持、防爬虫拿到第三方直链），
