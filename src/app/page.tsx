@@ -46,7 +46,7 @@ const FAQS = [
   },
   {
     q: "需要登录或安装软件吗？",
-    a: `无需安装任何软件。首次使用需关注公众号「${siteConfig.name}」并发送验证码完成验证（免费），验证通过后即可正常解析下载。`,
+    a: "无需安装任何软件，也无需登录或关注，打开即可免费解析下载。",
   },
   {
     q: "粘贴链接后提示解析失败怎么办？",
@@ -226,8 +226,8 @@ export default function Home() {
                         <h3 className="font-semibold text-red-400 mb-1">解析失败</h3>
                         <p className="text-sm text-red-300/80">{error}</p>
                         <p className="text-xs text-muted mt-3 leading-relaxed">
-                          遇到问题？关注公众号「神族九帝」并给公众号发消息，
-                          向站长反馈失败链接，我们会尽快排查处理。
+                          链接可能已失效或受平台权限限制，可更换网络环境后重试，
+                          或稍后再试。
                         </p>
                       </div>
                       <button
@@ -372,7 +372,7 @@ export default function Home() {
                 name: "解析失败怎么办？",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: `部分视频受平台风控或地区限制可能暂时无法解析，可更换网络环境后重试；如仍失败，关注公众号「${siteConfig.name}」并反馈链接，站长会协助排查。`,
+                  text: "部分视频受平台风控或地区限制可能暂时无法解析，可更换网络环境后重试，或稍后再试。",
                 },
               },
             ],
