@@ -74,7 +74,7 @@ jobs:
             echo "merge 有冲突，自动解决"
             while IFS= read -r -d '' f; do
               case "$f" in
-                 .github/*|src/app/layout.tsx)
+                 .github/*|src/app/layout.tsx|src/components/VideoParserForm.tsx|src/lib/api-middleware.ts)
                   git checkout --ours -- "$f" 2>/dev/null || git rm -q -f -- "$f" 2>/dev/null || true
                   echo "  保留 fork 版本(ours): $f"
                   ;;
@@ -118,9 +118,9 @@ jobs:
             git add -A -- .github/workflows
             git commit --no-edit -m "chore(ci): keep local workflow files (no SYNC_TOKEN)" 2>/dev/null || true
           fi
-          git checkout "origin/${{ steps.b.outputs.local_default }}" -- src/app/layout.tsx
-          git add -A -- src/app/layout.tsx
-          git commit --no-edit -m "chore: keep local version of src/app/layout.tsx" 2>/dev/null || true
+          git checkout "origin/${{ steps.b.outputs.local_default }}" -- src/app/layout.tsx src/components/VideoParserForm.tsx src/lib/api-middleware.ts
+          git add -A -- src/app/layout.tsx src/components/VideoParserForm.tsx src/lib/api-middleware.ts
+          git commit --no-edit -m "chore: keep local customized files" 2>/dev/null || true
           git push origin "${{ steps.b.outputs.local_default }}"
 
       - name: Sync tags
