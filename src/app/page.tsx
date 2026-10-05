@@ -15,7 +15,6 @@ import {
 } from "@/components/videos";
 import { ApiResponse } from "@/types/api";
 import { VIDEO_PLATFORMS, type VideoPlatformKey } from "@/config/video-platforms";
-import { siteConfig } from "@/config/site";
 
 // 平台名称单一数据源：从配置读取，避免与代码脱节（之前 README/SEO 只列了 7 个，实际 24 个）
 const PLATFORM_NAMES = Object.values(VIDEO_PLATFORMS).map((p) => p.name);
