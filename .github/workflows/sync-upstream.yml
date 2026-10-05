@@ -74,7 +74,7 @@ jobs:
             echo "merge 有冲突，自动解决"
             while IFS= read -r -d '' f; do
               case "$f" in
-                .github/*)
+                 .github/*|src/app/layout.tsx)
                   git checkout --ours -- "$f" 2>/dev/null || git rm -q -f -- "$f" 2>/dev/null || true
                   echo "  保留 fork 版本(ours): $f"
                   ;;
