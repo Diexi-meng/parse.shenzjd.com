@@ -118,6 +118,9 @@ jobs:
             git add -A -- .github/workflows
             git commit --no-edit -m "chore(ci): keep local workflow files (no SYNC_TOKEN)" 2>/dev/null || true
           fi
+          git checkout "origin/${{ steps.b.outputs.local_default }}" -- src/app/layout.tsx
+          git add -A -- src/app/layout.tsx
+          git commit --no-edit -m "chore: keep local version of src/app/layout.tsx" 2>/dev/null || true
           git push origin "${{ steps.b.outputs.local_default }}"
 
       - name: Sync tags
